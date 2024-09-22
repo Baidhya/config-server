@@ -3,13 +3,16 @@
 FROM openjdk:17-alpine
 
 # Set the working directory
-WORKDIR /app
+#WORKDIR /app
+VOLUME /tmp
 
 # Copy the built JAR file into the container
 COPY target/*.jar config-server.jar
 
 # Expose the application port
-EXPOSE 8888
+
+
+#EXPOSE 8888
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "config-server.jar"]
